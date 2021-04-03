@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+	<form>
+		<table align="center">
+			<tr th:each="current : ${emp}">
+				<td th:text="${current.empId}"/>
+				<td th:text="${current.empFirstname}"/>
+				<td th:text="${current.empLastName}"/>
+				<td th:text="${current.department.deptNo}"/>
+				<td th:text="${current.department.deptName}"/>
+				
+				<td><a th:href="@{/edit/{id}(id=${current.empId})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${current.empId})}">Delete</a></td>
+				
+			</tr>
+		</table>
+		<a href="inputEmployee">Add a new Employee</a>
+	
+	</form>
+</center>
+</body>
+</html>

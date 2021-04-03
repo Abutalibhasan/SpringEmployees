@@ -16,9 +16,7 @@ public class BeanConfiguration {
 	
 	@Bean
 	Employee employee() {
-		Employee bean = new Employee();
-		bean.setEmpFirstname("Muhammad");
-		bean.setEmpLastName("Albasha");
+		Employee bean = new Employee("Abutalib","Hasan");
 		return bean;
 	}
 	

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Contact</title>
+</head>
+<body>
+<center>
+<table>
+	<form th:object="${newEmp}" th:action="@{/update/{id}(id=${newEmp.empId})}" method='POST'>
+	<tr>
+		<td>First Name:</td> 
+		<td><input name="first" size="20" th:field="*{empFirstname}"></td>
+	</tr>
+	<tr>
+		<td>Last Name:</td>
+		<td><input name="last" size="20" th:field="*{empLastName}"></td>
+	</tr>
+	<tr>
+		<td>Dept No:</td>
+		<td><input name="department.deptNo" size="20" th:field="*{department.deptNo}"></td>
+	</tr>
+	<tr>
+		<td>Dept Name:</td>
+		<td><input name="department.deptName" size="20" th:field="*{department.deptName}"></td>
+	</tr>
+	<tr>
+		<td colspan="3" align="center"> <input name="submit" type="submit" value="submit"></td>
+	</tr>
+	</form>
+</table>
+	<a href="viewAll">View all Employees</a>
+</center>
+</body>
+</html>

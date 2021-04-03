@@ -15,12 +15,14 @@ import company.controller.BeanConfiguration;
 import company.repository.EmployeeRepository;
 
 @SpringBootApplication
-public class SpringEmployeesApplication implements CommandLineRunner{
+public class SpringEmployeesApplication {
 
 	public static void main(String[] args) {
 		
 		SpringApplication.run(SpringEmployeesApplication.class, args);
 	}
+
+/**
 		
 	@Autowired
 	EmployeeRepository repo;
@@ -37,8 +39,15 @@ public class SpringEmployeesApplication implements CommandLineRunner{
 			Department d = new Department(11,"Employees");
 			emp1.setDepartment(d);
 			repo.save(emp1);
+			
+			List<Employee> allEmp = repo.findAll();
+			for(Employee e: allEmp) {
+				System.out.println(e.toString());
+			}
 		
 		System.out.println(emp.toString());
 	}
+	
+**/
 
 }
